@@ -60,18 +60,12 @@ rather aspirational.
 
 ## Installation
 
-The easiest way of installing `odxtools` on your system is via `pip`:
-
-```bash
-pip3 install odxtools
-```
-
 If you want to develop `odxtools` itself, you need to install it from
 source using `git`. The first step is to clone the repository:
 
 ```bash
 cd $BASE_DIR
-git clone https://github.com/mercedes-benz/odxtools
+git clone https://github.com/minkeetan/odxtools
 ```
 
 After this, make sure that all python dependencies are installed:
