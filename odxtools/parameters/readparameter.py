@@ -9,6 +9,7 @@ from ..utils import read_description_from_odx
 from .codedconstparameter import CodedConstParameter
 from .dynamicparameter import DynamicParameter
 from .lengthkeyparameter import LengthKeyParameter
+from .nrcconstparameter import NrcConstParameter
 from .matchingrequestparameter import MatchingRequestParameter
 from .physicalconstantparameter import PhysicalConstantParameter
 from .reservedparameter import ReservedParameter
@@ -81,6 +82,21 @@ def read_parameter_from_odx(et_element):
             et_element.find("CODED-VALUE").text)
 
         return CodedConstParameter(short_name,
+                                   long_name=long_name,
+                                   semantic=semantic,
+                                   diag_coded_type=diag_coded_type,
+                                   coded_value=coded_value,
+                                   byte_position=byte_position,
+                                   bit_position=bit_position,
+                                   description=description)
+    
+    elif parameter_type == "NRC-CONST":
+        diag_coded_type = read_diag_coded_type_from_odx(
+            et_element.find("DIAG-CODED-TYPE"))
+        coded_value = diag_coded_type.base_data_type.cast_string(
+            et_element.find("CODED-VALUES/CODED-VALUE").text)
+
+        return NrcConstParameter(short_name,
                                    long_name=long_name,
                                    semantic=semantic,
                                    diag_coded_type=diag_coded_type,

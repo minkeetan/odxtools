@@ -8,6 +8,7 @@ from .parameterwithdop import ParameterWithDOP
 from .codedconstparameter import CodedConstParameter
 from .dynamicparameter import DynamicParameter
 from .lengthkeyparameter import LengthKeyParameter
+from .nrcconstparameter import NrcConstParameter
 from .matchingrequestparameter import MatchingRequestParameter
 from .physicalconstantparameter import PhysicalConstantParameter
 from .reservedparameter import ReservedParameter
